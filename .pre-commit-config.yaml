@@ -1,0 +1,41 @@
+repos:
+- repo: https://github.com/pre-commit/pre-commit-hooks
+  rev: v4.0.1
+  hooks:
+  - id: check-symlinks
+  - id: detect-private-key
+  - id: end-of-file-fixer
+  - id: trailing-whitespace
+  - id: mixed-line-ending
+    args: [--fix=lf]
+- repo: https://github.com/pre-commit/pygrep-hooks
+  rev: v1.9.0
+  hooks:
+  - id: python-check-mock-methods
+  - id: python-no-eval
+  - id: python-no-log-warn
+  - id: python-use-type-annotations
+- repo: https://github.com/conorfalvey/check_pdb_hook
+  rev: 0.0.9
+  hooks:
+  - id: check_pdb_hook
+- repo: https://github.com/psf/black
+  rev: 22.10.0
+  hooks:
+  - id: black
+    args: [ '-l', '120', '--exclude', 'E203']
+#- repo: https://github.com/asottile/blacken-docs
+#  rev: v1.12.1
+#  hooks:
+#  - id: blacken-docs
+#    additional_dependencies: [black==22.10.0]
+- repo: https://github.com/pycqa/flake8
+  rev: 3.9.2
+  hooks:
+  - id: flake8
+    additional_dependencies: ["flake8-bugbear==20.11.1"]
+-   repo: https://github.com/pre-commit/mirrors-isort
+    rev: v5.10.1
+    hooks:
+    -   id: isort
+        args: ["--profile", "black", '-l', '120']

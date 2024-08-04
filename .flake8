@@ -1,0 +1,4 @@
+[flake8]
+max-line-length = 120
+# ignore = F401, B007, E501, W503, E712, E203
+ignore = E203, W503  # https://black.readthedocs.io/en/stable/faq.html#why-are-flake8-s-e203-and-w503-violated
